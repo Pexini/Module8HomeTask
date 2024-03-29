@@ -17,11 +17,11 @@ public class Main {
 
         System.out.println("Наш Зоопарк содержит: ");
         for (Animal animal : animals) {
-            if (animal != null) {
+//            if (animal != null) {
                 animal.say();
                 animal.walk();
                 System.out.println(animal.getClass().getSimpleName());
             }
         }
     }
-}
+//}
