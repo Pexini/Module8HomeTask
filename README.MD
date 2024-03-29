@@ -11,15 +11,14 @@
 <li>Расширяемость: Наследование позволяет добавлять новые методы и поля к существующим классам без изменения их исходного кода.</li>
 <li>Упрощение кода: Подклассы могут использовать методы и поля своих родительских классов, что делает код более понятным и легко поддерживаемым.</li>
 </ol>
-<strong> Пример использования наследования: </strong>
-// Родительский класс<br>
-class Animal {<br>
+<strong> Пример использования наследования: </strong><br>
+
+class Animal {  <em> // Родительский класс </em> <br>
     void eat() {<br>
         System.out.println("Animal is eating");}<br>
 }<br>
 
-// Подкласс, наследующий от Animal<br>
-class Dog extends Animal {<br>
+class Dog extends Animal { <em> // Подкласс, наследующий от Animal </em> <br>
      void bark() {<br>
         System.out.println("Dog is barking");}<br>
 }<br>
@@ -28,6 +27,6 @@ public class Main {<br>
 public static void main(String[] args) {<br>
      Dog dog = new Dog();<br>
 <br>
-     dog.eat(); // Метод eat() унаследован от Animal<br>
-     dog.bark(); // Метод bark() из класса Dog}<br>
+     dog.eat(); <em> // Метод eat() унаследован от Animal </em> <br>
+     dog.bark(); <em> // Метод bark() из класса Dog </em> } <br>
 }<br>
