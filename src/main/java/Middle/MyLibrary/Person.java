@@ -9,5 +9,5 @@ public abstract class Person {
         System.out.println("Пришел в библиотеку");
     }
     abstract void didTheAction(); // взять или вернуть книгу
-    bstract void item(); //взять или вернуть книгу
+
 }
