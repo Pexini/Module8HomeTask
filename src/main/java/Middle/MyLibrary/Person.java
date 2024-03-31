@@ -8,5 +8,6 @@ public abstract class Person {
     void comeToMylibrary(){
         System.out.println("Пришел в библиотеку");
     }
-    abstract void didTheAction();
+    abstract void didTheAction(); // взять или вернуть книгу
+    bstract void item(); //взять или вернуть книгу
 }
