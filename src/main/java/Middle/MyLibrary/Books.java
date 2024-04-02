@@ -65,6 +65,11 @@ public class Books extends Materials {
     public void findMaterials(String materialsTitle) {
         super.findMaterials(materialsTitle);
     }
+
+    @Override
+    public void removeMaterial() {
+
+    }
 }
 
 

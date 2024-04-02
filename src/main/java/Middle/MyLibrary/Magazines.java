@@ -50,4 +50,23 @@ public class Magazines extends Materials {
     public void findMaterials(String materialsTitle) {
         super.findMaterials(materialsTitle);
     }
+
+    @Override
+    public void removeMaterial() {
+
+    }
+
+    public Magazines(String title, String author) {
+        super(title, author);
+    }
+
+    @Override
+    public String getAuthor() {
+        return super.getAuthor();
+    }
+
+    @Override
+    public void setAuthor(String author) {
+        super.setAuthor(author);
+    }
 }

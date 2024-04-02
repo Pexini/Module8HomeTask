@@ -32,7 +32,7 @@ public class Main {
 
 
         ArrayList<Tales> tales = new ArrayList<>();
-        tales.add(new Tales ("Девочка и веер", "Марина Полякова"));
+        tales.add(new Tales("Девочка и веер", "Марина Полякова"));
         tales.add(new Tales("Сказка о царе Салтане, о сыне его славном и могучем богатыре князе Гвидоне Салтановиче и о прекрасной царевне Лебеди", "Александр Пушкин"));
         tales.add(new Tales("Девочка Снегурочка", "Владимир Даль"));
         tales.add(new Tales("Ветер и Солнце", "Константин Ушинский"));
@@ -96,7 +96,7 @@ public class Main {
                             if (book.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая книга выдана " + book.getTitle());
-
+                                book.removeMaterial();
                                 break;
                             }
                         }

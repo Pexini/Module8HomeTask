@@ -45,20 +45,22 @@ public abstract class Materials {
     public abstract void borrowMaterial();
 
     public abstract int getTotalMaterials();
-
+    public abstract void removeMaterial();
     public void findMaterials(String materialsTitle) {
         boolean found = false;
         for (Materials material : materialsList) {
             if (material.getTitle().equalsIgnoreCase(materialsTitle)) {
                 found = true;
-break;
-          }
+                break;
+            }
         }
-    if (found){
-        System.out.println("Книга " + materialsTitle + " Есть в наличии");
-    }else {
-        System.out.println("Книга "  + materialsTitle + " На данный момент отсутствует в библиотеке");
+        if (found) {
+            System.out.println("Книга " + materialsTitle + " Есть в наличии");
+        } else {
+            System.out.println("Книга " + materialsTitle + " На данный момент отсутствует в библиотеке");
+        }
     }
-    }
+
+
 
 }
