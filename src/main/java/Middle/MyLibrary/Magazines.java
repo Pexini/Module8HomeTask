@@ -6,8 +6,8 @@ import java.util.List;
 public class Magazines extends Materials {
     private List<Magazines> magazinesList;
 
-    public Magazines(String title, String author) {
-        super(title, author);
+    public Magazines(String title) {
+        super(title, "");
         this.magazinesList = new ArrayList<>();
     }
 
@@ -21,15 +21,6 @@ public class Magazines extends Materials {
         super.setTitle(title);
     }
 
-    @Override
-    public String getAuthor() {
-        return super.getAuthor();
-    }
-
-    @Override
-    public void setAuthor(String author) {
-        super.setAuthor(author);
-    }
 
     @Override
     public String toString() {
