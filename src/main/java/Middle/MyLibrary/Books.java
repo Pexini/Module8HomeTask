@@ -29,7 +29,11 @@ public class Books extends Materials {
 
     @Override
     public void setAuthor(String author) {
-        super.setAuthor(author);
+        setAuthor("Лев Толстой");
+        setAuthor("Михаил Булгаков");
+        setAuthor("Эрих Мария Ремарк");
+        setAuthor("Фёдор Михайлович Достоевский");
+
     }
 
     @Override
