@@ -57,7 +57,7 @@ public class Main {
                         break;
                     case 2:
                         for (Magazines magazine : magazines) {
-                            System.out.println(magazine.getTitle() + "   " + magazine.getAuthor());
+                            System.out.println(magazine.getTitle());
                         }
                         break;
 
@@ -82,7 +82,7 @@ public class Main {
                 int userChoice3 = scanner.nextInt();
                 switch (userChoice3) {
                     case 1: {
-                        System.out.println("Введите название: ");
+                        System.out.println("Введите название материала, который хотите взять: ");
                         scanner.nextLine();
                         String titleToBorrow = scanner.nextLine();
                         boolean found = false;
@@ -93,37 +93,41 @@ public class Main {
 
                                 break;
                             }
-                            for (Magazines magazine : magazines) {
-                                if (magazine.getTitle().equalsIgnoreCase(titleToBorrow)) {
-                                    found = true;
-                                    System.out.println("Желаемый журнал выдан " + magazine.getTitle());
+                        }
+                        for (Magazines magazine : magazines) {
+                            if (magazine.getTitle().equalsIgnoreCase(titleToBorrow)) {
+                                found = true;
+                                System.out.println("Желаемый журнал выдан " + magazine.getTitle());
 
-                                    break;
-                                }
-                                for (Stories storie : stories){
-                                    if (storie.getTitle().equalsIgnoreCase(titleToBorrow)){
-                                        found = true;
-                                        System.out.println("Желаемая история выдана " + storie.getTitle());
-                                    }
                                 break;
-                                }
-                                for (Tales tale : tales){
-                                    if (tale.getTitle().equalsIgnoreCase(titleToBorrow)){
-                                        found = true;
-                                        System.out.println("Желаемая сказка выдана " + tale.getTitle());
-                                    }
-                                    break;
-                                }
                             }
+                        }
+                        for (Stories storie : stories) {
+                            if (storie.getTitle().equalsIgnoreCase(titleToBorrow)) {
+                                found = true;
+                                System.out.println("Желаемая история выдана " + storie.getTitle());
 
-                            if (!found) {
-                                System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
+                                break;
                             }
-                            break;
+                        }
+                        for (Tales tale : tales) {
+                            if (tale.getTitle().equalsIgnoreCase(titleToBorrow)) {
+                                found = true;
+                                System.out.println("Желаемая сказка выдана " + tale.getTitle());
+
+                                break;
+                            }
                         }
 
+                        if (!found) {
+                            System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
+                        }
+                        break;
                     }
+
                 }
+            case 3:
         }
+
     }
 }
