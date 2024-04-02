@@ -1,5 +1,5 @@
 package Middle.MyLibrary;
 
-public class Tales extends Library{
+public class Tales extends Library {
 
 }

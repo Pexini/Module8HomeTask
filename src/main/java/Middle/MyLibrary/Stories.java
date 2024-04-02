@@ -1,4 +1,4 @@
 package Middle.MyLibrary;
 
-public class Stories extends Library{
+public class Stories extends Library {
 }

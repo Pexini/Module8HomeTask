@@ -1,4 +1,57 @@
 package Middle.MyLibrary;
 
-public class Magazines extends Library{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Magazines extends Materials {
+    private List<Magazines> magazinesList;
+
+    public Magazines(String title, String author) {
+        super(title, author);
+        this.magazinesList = new ArrayList<>();
+    }
+
+    @Override
+    public String getTitle() {
+        return super.getTitle();
+    }
+
+    @Override
+    public void setTitle(String title) {
+        super.setTitle(title);
+    }
+
+    @Override
+    public String getAuthor() {
+        return super.getAuthor();
+    }
+
+    @Override
+    public void setAuthor(String author) {
+        super.setAuthor(author);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public void addMaterial() {
+        System.out.println("Журнал успешно добавлена в библиотеку.");
+    }
+
+    @Override
+    public void borrowMaterial() {
+        System.out.println("Журнал успешно выдан.");
+    }
+
+    public void addMagazines(Magazines magazines) {
+        magazines.addMagazines(magazines);
+    }
+
+    @Override
+    public int getTotalMaterials() {
+        return 0;
+    }
 }
