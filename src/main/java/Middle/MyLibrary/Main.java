@@ -91,7 +91,6 @@ public class Main {
                                 found = true;
                                 System.out.println("Желаемая книга выдана " + book.getTitle());
 
-
                                 break;
                             }
                         }
