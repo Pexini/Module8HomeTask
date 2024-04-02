@@ -32,12 +32,12 @@ public class Stories extends Materials {
 
     @Override
     public void addMaterial() {
-
+        System.out.println("Сборник Историй успешно добавлен в библиотеку.");
     }
 
     @Override
     public void borrowMaterial() {
-
+        System.out.println("Сборник Историй успешно выдан.");
     }
 
     @Override

@@ -47,7 +47,7 @@ public class Magazines extends Materials {
     }
 
     public void addMagazines(Magazines magazines) {
-        magazines.addMagazines(magazines);
+        magazinesList.add(magazines);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package Middle.MyLibrary;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Books extends Materials {
-    private List<Books> booksList;
+    private List <Book> booksList;
 
     public Books(String title, String author) {
         super(title, author);
@@ -47,13 +47,9 @@ public class Books extends Materials {
         System.out.println("Книга успешно выдана.");
     }
 
-    public void addBook(Books book) {
-        booksList.add(book);
-    }
-
     @Override
     public int getTotalMaterials() {
-        return booksList.size();
+        return 0;
     }
 
     @Override
