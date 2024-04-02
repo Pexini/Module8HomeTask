@@ -95,7 +95,12 @@ public class Main {
                                 break;
                             }
                         }
+                        if (!found) {
+                            System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
+                        }
+                        break;
                     }
+
                 }
         }
     }
