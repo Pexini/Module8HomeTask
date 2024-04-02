@@ -56,6 +56,10 @@ public class Books extends Materials {
         return booksList.size();
     }
 
+    @Override
+    public void findMaterials(String materialsTitle) {
+        super.findMaterials(materialsTitle);
+    }
 }
 
 

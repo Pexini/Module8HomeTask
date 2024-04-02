@@ -54,4 +54,9 @@ public class Magazines extends Materials {
     public int getTotalMaterials() {
         return 0;
     }
+
+    @Override
+    public void findMaterials(String materialsTitle) {
+        super.findMaterials(materialsTitle);
+    }
 }
