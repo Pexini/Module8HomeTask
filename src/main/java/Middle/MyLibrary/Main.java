@@ -57,7 +57,7 @@ public class Main {
                         break;
                     case 2:
                         for (Magazines magazine : magazines) {
-                            System.out.println(magazine.getTitle() + " -  " + magazine.getAuthor());
+                            System.out.println(magazine.getTitle() + "   " + magazine.getAuthor());
                         }
                         break;
 
@@ -93,13 +93,36 @@ public class Main {
 
                                 break;
                             }
-                        }
-                        if (!found) {
-                            System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
-                        }
-                        break;
-                    }
+                            for (Magazines magazine : magazines) {
+                                if (magazine.getTitle().equalsIgnoreCase(titleToBorrow)) {
+                                    found = true;
+                                    System.out.println("Желаемый журнал выдан " + magazine.getTitle());
 
+                                    break;
+                                }
+                                for (Stories storie : stories){
+                                    if (storie.getTitle().equalsIgnoreCase(titleToBorrow)){
+                                        found = true;
+                                        System.out.println("Желаемая история выдана " + storie.getTitle());
+                                    }
+                                break;
+                                }
+                                for (Tales tale : tales){
+                                    if (tale.getTitle().equalsIgnoreCase(titleToBorrow)){
+                                        found = true;
+                                        System.out.println("Желаемая сказка выдана " + tale.getTitle());
+                                    }
+                                    break;
+                                }
+                            }
+
+                            if (!found) {
+                                System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
+                            }
+                            break;
+                        }
+
+                    }
                 }
         }
     }
