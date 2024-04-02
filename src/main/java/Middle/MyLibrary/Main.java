@@ -33,15 +33,48 @@ public class Main {
                 new Tales("Умнее всех", "Дмитрий Мамин-Сибиряк."),
                 new Tales("Рачья свадьба", "Алексей Николаевич Толстой")};
 
-        System.out.println("Добро пожаловать в Библиотеку им. Давыдова");
-        System.out.println( "Пожалуйста выберите действия которые вы хотите совершить: 1. Получить читательский билет; 2. Получить книгу; 3. Вернуть книгу; 4. Узнать о списке книг в библиотеке");
-        String userChoice = scanner.nextLine();
-if (userChoice == 1){
+        System.out.println("Добро пожаловать в Библиотеку");
+        System.out.println("Пожалуйста выберите действия которые вы хотите совершить");
+        System.out.println("1. Узнать о списке книг в библиотеке");
+        System.out.println("2. Получить книгу");
+        System.out.println("3. Вернуть книгу");
+        System.out.println("4. Получить читательский билет");
 
-}
+        int userChoice = scanner.nextInt();
+        switch (userChoice) {
+            case 1:
+                System.out.println("Какой раздел библиотеки вас интересует:");
+                System.out.println("1. Книги");
+                System.out.println("2. Журналы");
+                System.out.println("3. Научные истории");
+                System.out.println("4. Сказки");
+                int userChoice2 = scanner.nextInt();
+                switch (userChoice2) {
+                    case 1:
+                        for (Books book : books) {
+                            System.out.println(book.getTitle() + book.getAuthor());
+                        }
+                        break;
+                    case 2:
+                        for (Magazines magazine : magazines) {
+                            System.out.println(magazine.getTitle() + magazine.getAuthor());
+                        }
+                        break;
 
-        for (Books book : books) {
-            System.out.println(book.getTitle() + " " + book.getAuthor());
+                    case 3:
+                        for (Stories storie : stories) {
+                            System.out.println(storie.getTitle() + storie.getAuthor());
+                        }
+                        break;
+                    case 4:
+                        for (Tales tale : tales) {
+                            System.out.println(tale.getTitle() + tale.getAuthor());
+                        }
+                        break;
+
+                }
+                System.out.println("Желаете взять что нибудь почитать?");
+
         }
     }
 }
