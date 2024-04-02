@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Books[] books = new Books[]{new Books("Война и Мир", "Лев толстой"),
+        Books[] books = new Books[]{new Books("Война и Мир", "Лев Толстой"),
                 new Books("Мастер и Маргарита", "Михаил Булгаков"),
                 new Books("Жизнь в займы", "Эрих Мария Ремарк"),
                 new Books("Бесы", "Фёдор Михайлович Достоевский")};
@@ -33,7 +33,7 @@ public class Main {
                 new Tales("Умнее всех", "Дмитрий Мамин-Сибиряк."),
                 new Tales("Рачья свадьба", "Алексей Николаевич Толстой")};
 
-        System.out.println("Добро пожаловать в Библиотеку");
+        System.out.println("Добро пожаловать в главное меню Библиотеки  " + " Всемирная библиотека им. Пушкина ");
         System.out.println("Пожалуйста выберите действия которые вы хотите совершить");
         System.out.println("1. Узнать о списке книг в библиотеке");
         System.out.println("2. Получить книгу");
@@ -52,29 +52,51 @@ public class Main {
                 switch (userChoice2) {
                     case 1:
                         for (Books book : books) {
-                            System.out.println(book.getTitle() + book.getAuthor());
+                            System.out.println(book.getTitle() + " - " + book.getAuthor());
                         }
                         break;
                     case 2:
                         for (Magazines magazine : magazines) {
-                            System.out.println(magazine.getTitle() + magazine.getAuthor());
+                            System.out.println(magazine.getTitle() + " -  " + magazine.getAuthor());
                         }
                         break;
 
                     case 3:
                         for (Stories storie : stories) {
-                            System.out.println(storie.getTitle() + storie.getAuthor());
+                            System.out.println(storie.getTitle() + " - " + storie.getAuthor());
                         }
                         break;
                     case 4:
                         for (Tales tale : tales) {
-                            System.out.println(tale.getTitle() + tale.getAuthor());
+                            System.out.println(tale.getTitle() + " - " + tale.getAuthor());
                         }
                         break;
 
                 }
                 System.out.println("Желаете взять что нибудь почитать?");
+                System.out.println("1. Да");
+                System.out.println("2. Нет");
+                System.out.println("3. Вернуться к списку материалов.");
+                System.out.println("4. Вернуться в главное меню.");
+                ;
+                int userChoice3 = scanner.nextInt();
+                switch (userChoice3) {
+                    case 1: {
+                        System.out.println("Введите название: ");
+                        scanner.nextLine();
+                        String titleToBorrow = scanner.nextLine();
+                        boolean found = false;
+                        for (Books book : books) {
+                            if (book.getTitle().equalsIgnoreCase(titleToBorrow)) {
+                                found = true;
+                                System.out.println("Желаемая книга выдана " + book.getTitle());
 
+
+                                break;
+                            }
+                        }
+                    }
+                }
         }
     }
 }
