@@ -1,15 +1,17 @@
 package Middle.MyLibrary;
 
-import java.awt.print.Book;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Books extends Materials {
-    private List <Book> booksList;
+    private List <String> booksList;
 
     public Books(String title, String author) {
         super(title, author);
         this.booksList = new ArrayList<>();
+
     }
 
     @Override
@@ -39,12 +41,19 @@ public class Books extends Materials {
 
     @Override
     public void addMaterial() {
-        System.out.println("Книга успешно добавлена в библиотеку.");
+        String bookInfo = getTitle() + " " + getAuthor();
+        booksList.add(bookInfo);
+        System.out.println("Книга " + bookInfo + "Успешно добавлена в библиотеку.");
     }
 
     @Override
     public void borrowMaterial() {
-        System.out.println("Книга успешно выдана.");
+        if (!booksList.isEmpty()){
+            String borrowedBook = booksList.remove(0);
+            System.out.println("Книга " + borrowedBook + "  - Успешно выдана");
+        }else {
+            System.out.println("Извините данного материала в нашей библиотеке на данный момент нет, пожалуйста зайдите позже. Спасибо.");
+        }
     }
 
     @Override
