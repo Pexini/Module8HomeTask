@@ -41,23 +41,6 @@ public abstract class Materials {
                 '}';
     }
 
-    public static int returnToMaterialList(int userChoice) {
-        System.out.println("Возвращение в главное меню.");
-return userChoice;
-    }
-
-    public static int returnToMainMenu(int userChoice) {
-        System.out.println("Возвращение в главное меню.");
-return userChoice;
-    }
-
-    public abstract void addMaterial();
-
-    public abstract void borrowMaterial();
-
-    public abstract int getTotalMaterials();
-
-    public abstract void removeMaterial();
 
     public void findMaterials(String materialsTitle) {
         boolean found = false;
@@ -74,5 +57,33 @@ return userChoice;
         }
     }
 
-
+    public void removeMaterials(String materialsTitle) {
+        Materials materialToRemove = null;
+        for (Materials material : materialsList) {
+            if (material.getTitle().equalsIgnoreCase(materialsTitle)) {
+                materialToRemove = material;
+                break;
+            }
+        }
+        if (materialToRemove != null) {
+            materialsList.remove(materialsTitle);
+            System.out.println("Книга " + materialsTitle + "Успешно удалена из библиотеки");
+        } else {
+            System.out.println("Книга " + materialsTitle + " не найдена в библиотеке");
+        }
+    }
+public void addMaterials(String materialsTitle){
+        Materials materialsToAdd = null;
+        for (Materials material : materialsList){
+            if (material.getTitle().equalsIgnoreCase(materialsTitle)){
+                materialsToAdd = material;
+                break;
+            }
+        }if (materialsToAdd == null){
+            materialsList.add(materialsToAdd);
+        System.out.println("Книга успешно добавлена в библиотеку " + materialsTitle);
+    }else {
+        System.out.println("Данная книга уже есть в библиотеке " + materialsTitle );
+    }
+}
 }

@@ -39,27 +39,7 @@ public class Books extends Materials {
         return super.toString();
     }
 
-    @Override
-    public void addMaterial() {
-        String bookInfo = getTitle() + " " + getAuthor();
-        booksList.add(bookInfo);
-        System.out.println("Книга " + bookInfo + "Успешно добавлена в библиотеку.");
-    }
 
-    @Override
-    public void borrowMaterial() {
-        if (!booksList.isEmpty()){
-            String borrowedBook = booksList.remove(0);
-            System.out.println("Книга " + borrowedBook + "  - Успешно выдана");
-        }else {
-            System.out.println("Извините данного материала в нашей библиотеке на данный момент нет, пожалуйста зайдите позже. Спасибо.");
-        }
-    }
-
-    @Override
-    public int getTotalMaterials() {
-        return 0;
-    }
 
     @Override
     public void findMaterials(String materialsTitle) {
@@ -67,10 +47,14 @@ public class Books extends Materials {
     }
 
     @Override
-    public void removeMaterial() {
-
+    public void removeMaterials(String materialsTitle) {
+        super.removeMaterials(materialsTitle);
     }
 
+    @Override
+    public void addMaterials(String materialsTitle) {
+        super.addMaterials(materialsTitle);
+    }
 }
 
 

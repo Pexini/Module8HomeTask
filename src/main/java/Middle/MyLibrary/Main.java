@@ -45,7 +45,6 @@ public class Main {
         System.out.println("1. Узнать о списке книг в библиотеке");
         System.out.println("2. Проверить наличие книги в нашей библиотеке");
         System.out.println("3. Вернуть книгу");
-        System.out.println("4. Получить читательский билет");
 
 
         int userChoice = scanner.nextInt();
@@ -96,7 +95,7 @@ public class Main {
                             if (book.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая книга выдана " + book.getTitle());
-                                books.remove(book);
+                                book.removeMaterials(book.getTitle());
                                 break;
                             }
                         }
@@ -104,7 +103,7 @@ public class Main {
                             if (magazine.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемый журнал выдан " + magazine.getTitle());
-                                magazines.remove(magazine);
+                                magazine.removeMaterials(magazine.getTitle());
                                 break;
                             }
                         }
@@ -112,7 +111,7 @@ public class Main {
                             if (storie.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая история выдана " + storie.getTitle());
-                                stories.remove(storie);
+                                storie.removeMaterials(storie.getTitle());
                                 break;
                             }
                         }
@@ -120,7 +119,7 @@ public class Main {
                             if (tale.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая сказка выдана " + tale.getTitle());
-                                tales.remove(tale);
+                                tale.removeMaterials(tale.getTitle());
                                 break;
                             }
                         }
@@ -137,6 +136,7 @@ public class Main {
                     }
 
                 }
+                break;
             case 2: {
                 System.out.println(" Введите название материала который ищите:");
                 scanner.nextLine();
@@ -181,7 +181,28 @@ public class Main {
 
 
             }
+            case 3: {
+                System.out.println("Введите название книги, которую хотите вернуть");
+                scanner.nextLine();
+                String returnedMaterialTitle = scanner.nextLine();
+                boolean materialReturned = false;
+                for (Materials material : books || magazines || stories || tales) {
+                    if (!materialReturned) {
+                        material.addMaterials(returnedMaterialTitle, "Author");
+                        System.out.println("Спасибо, материал  " + returnedMaterialTitle + " Успешно возвращен в библиотеку");
+                        break;
+                    }
+                }
+                if (returnedMaterialTitle == findMaterial) {
+                    System.out.println(" У нас уже есть материалы с таким названием.");
+                    materialReturned = true;
+                    break;
+                }
+            }
 
         }
     }
 }
+
+
+

@@ -27,34 +27,12 @@ public class Magazines extends Materials {
         return super.toString();
     }
 
-    @Override
-    public void addMaterial() {
-        System.out.println("Журнал успешно добавлена в библиотеку.");
-    }
-
-    @Override
-    public void borrowMaterial() {
-        System.out.println("Журнал успешно выдан.");
-    }
-
-    public void addMagazines(Magazines magazines) {
-        magazinesList.add(magazines);
-    }
-
-    @Override
-    public int getTotalMaterials() {
-        return 0;
-    }
 
     @Override
     public void findMaterials(String materialsTitle) {
         super.findMaterials(materialsTitle);
     }
 
-    @Override
-    public void removeMaterial() {
-
-    }
 
     public Magazines(String title, String author) {
         super(title, author);
@@ -68,5 +46,15 @@ public class Magazines extends Materials {
     @Override
     public void setAuthor(String author) {
         super.setAuthor(author);
+    }
+
+    @Override
+    public void removeMaterials(String materialsTitle) {
+        super.removeMaterials(materialsTitle);
+    }
+
+    @Override
+    public void addMaterials(String materialsTitle) {
+        super.addMaterials(materialsTitle);
     }
 }

@@ -30,20 +30,6 @@ public class Stories extends Materials {
         return super.toString();
     }
 
-    @Override
-    public void addMaterial() {
-        System.out.println("Сборник Историй успешно добавлен в библиотеку.");
-    }
-
-    @Override
-    public void borrowMaterial() {
-        System.out.println("Сборник Историй успешно выдан.");
-    }
-
-    @Override
-    public int getTotalMaterials() {
-        return 0;
-    }
 
     @Override
     public void findMaterials(String materialsTitle) {
@@ -51,7 +37,12 @@ public class Stories extends Materials {
     }
 
     @Override
-    public void removeMaterial() {
+    public void removeMaterials(String materialsTitle) {
+        super.removeMaterials(materialsTitle);
+    }
 
+    @Override
+    public void addMaterials(String materialsTitle) {
+        super.addMaterials(materialsTitle);
     }
 }
