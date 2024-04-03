@@ -138,21 +138,48 @@ public class Main {
 
                 }
             case 2: {
-                System.out.println(" Введите название книги:");
+                System.out.println(" Введите название материала который ищите:");
                 scanner.nextLine();
                 String titleMaterials = scanner.nextLine();
                 boolean found = false;
-                for (Books book : books){
-                    if(book.getTitle().equalsIgnoreCase((titleMaterials))){
+                for (Books book : books) {
+                    if (book.getTitle().equalsIgnoreCase((titleMaterials))) {
                         found = true;
-                        System.out.println("Желаемая книга есть в нашей библеотеке " + book.getTitle());
-                        break;
-                    }
-                    if (!found){
-                        System.out.println("Извините данная книга отсутствует, зайдите позже");
+                        System.out.println("Желаемая книга есть в нашей библиотеке ");
                         break;
                     }
                 }
+                for (Magazines magazine : magazines) {
+                    if (magazine.getTitle().equalsIgnoreCase(titleMaterials)) {
+                        found = true;
+                        System.out.println("Желаемая журнал есть в нашей библиотеке");
+                        magazines.remove(magazine);
+                        break;
+                    }
+                }
+                for (Stories storie : stories) {
+                    if (storie.getTitle().equalsIgnoreCase(titleMaterials)) {
+                        found = true;
+                        System.out.println("Желаемая история есть в нашей библиотеке");
+                        stories.remove(storie);
+                        break;
+                    }
+                }
+                for (Tales tale : tales) {
+                    if (tale.getTitle().equalsIgnoreCase(titleMaterials)) {
+                        found = true;
+                        System.out.println("Желаемая сказка есть в нашей библиотеке");
+                        tales.remove(tale);
+                        break;
+                    }
+
+                }
+                if (!found) {
+                    System.out.println("Извините данная книга отсутствует, зайдите позже");
+                    break;
+                }
+
+
             }
 
         }
