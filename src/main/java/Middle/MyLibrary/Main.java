@@ -43,7 +43,7 @@ public class Main {
         System.out.println("Добро пожаловать в главное меню Библиотеки  " + " Всемирная библиотека им. Пушкина ");
         System.out.println("Пожалуйста выберите действия которые вы хотите совершить");
         System.out.println("1. Узнать о списке книг в библиотеке");
-        System.out.println("2. Получить книгу");
+        System.out.println("2. Проверить наличие книги в нашей библиотеке");
         System.out.println("3. Вернуть книгу");
         System.out.println("4. Получить читательский билет");
 
@@ -84,9 +84,7 @@ public class Main {
                 System.out.println("Желаете взять что нибудь почитать?");
                 System.out.println("1. Да");
                 System.out.println("2. Нет");
-                System.out.println("3. Вернуться к списку материалов.");
-                System.out.println("4. Вернуться в главное меню.");
-                ;
+
                 int userChoice3 = scanner.nextInt();
                 switch (userChoice3) {
                     case 1: {
@@ -137,15 +135,25 @@ public class Main {
                         System.out.println("Спасибо что заглянули в нашу библиотеку, возвращайтесь скорее.");
                         break;
                     }
-                    case 3: {
-                        Materials.returnToMaterialList(userChoice2);
 
+                }
+            case 2: {
+                System.out.println(" Введите название книги:");
+                scanner.nextLine();
+                String titleMaterials = scanner.nextLine();
+                boolean found = false;
+                for (Books book : books){
+                    if(book.getTitle().equalsIgnoreCase((titleMaterials))){
+                        found = true;
+                        System.out.println("Желаемая книга есть в нашей библеотеке " + book.getTitle());
+                        break;
                     }
-                    case 4: {
-                        Materials.returnToMainMenu(userChoice);
-
+                    if (!found){
+                        System.out.println("Извините данная книга отсутствует, зайдите позже");
+                        break;
                     }
                 }
+            }
 
         }
     }

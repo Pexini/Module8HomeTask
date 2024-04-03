@@ -42,12 +42,13 @@ public abstract class Materials {
     }
 
     public static int returnToMaterialList(int userChoice) {
-
+        System.out.println("Возвращение в главное меню.");
+return userChoice;
     }
 
     public static int returnToMainMenu(int userChoice) {
         System.out.println("Возвращение в главное меню.");
-        showMainMenu;
+return userChoice;
     }
 
     public abstract void addMaterial();
