@@ -2,8 +2,10 @@ package Middle.MyLibrary;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public abstract class Materials {
+
     private String title;
     private String author;
     private static List<Materials> materialsList = new ArrayList<>();
@@ -39,13 +41,23 @@ public abstract class Materials {
                 '}';
     }
 
+    public static int returnToMaterialList(int userChoice) {
+
+    }
+
+    public static int returnToMainMenu(int userChoice) {
+        System.out.println("Возвращение в главное меню.");
+        showMainMenu;
+    }
 
     public abstract void addMaterial();
 
     public abstract void borrowMaterial();
 
     public abstract int getTotalMaterials();
+
     public abstract void removeMaterial();
+
     public void findMaterials(String materialsTitle) {
         boolean found = false;
         for (Materials material : materialsList) {
@@ -60,7 +72,6 @@ public abstract class Materials {
             System.out.println("Книга " + materialsTitle + " На данный момент отсутствует в библиотеке");
         }
     }
-
 
 
 }

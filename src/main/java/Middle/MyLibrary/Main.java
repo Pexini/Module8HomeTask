@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+
         ArrayList<Books> books = new ArrayList<>();
         books.add(new Books("Война и Мир", "Лев Толстой"));
         books.add(new Books("Мастер и Маргарита", "Михаил Булгаков"));
@@ -45,6 +46,7 @@ public class Main {
         System.out.println("2. Получить книгу");
         System.out.println("3. Вернуть книгу");
         System.out.println("4. Получить читательский билет");
+
 
         int userChoice = scanner.nextInt();
         switch (userChoice) {
@@ -96,7 +98,7 @@ public class Main {
                             if (book.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая книга выдана " + book.getTitle());
-                                book.removeMaterial();
+                                books.remove(book);
                                 break;
                             }
                         }
@@ -104,7 +106,7 @@ public class Main {
                             if (magazine.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемый журнал выдан " + magazine.getTitle());
-
+                                magazines.remove(magazine);
                                 break;
                             }
                         }
@@ -112,7 +114,7 @@ public class Main {
                             if (storie.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая история выдана " + storie.getTitle());
-
+                                stories.remove(storie);
                                 break;
                             }
                         }
@@ -120,7 +122,7 @@ public class Main {
                             if (tale.getTitle().equalsIgnoreCase(titleToBorrow)) {
                                 found = true;
                                 System.out.println("Желаемая сказка выдана " + tale.getTitle());
-
+                                tales.remove(tale);
                                 break;
                             }
                         }
@@ -129,11 +131,22 @@ public class Main {
                             System.out.println("Такой книги в данный момент нет, проверьте правильность выбора книги");
                         }
                         break;
+
                     }
+                    case 2: {
+                        System.out.println("Спасибо что заглянули в нашу библиотеку, возвращайтесь скорее.");
+                        break;
+                    }
+                    case 3: {
+                        Materials.returnToMaterialList(userChoice2);
 
+                    }
+                    case 4: {
+                        Materials.returnToMainMenu(userChoice);
+
+                    }
                 }
-            case 3:
-        }
 
+        }
     }
 }
