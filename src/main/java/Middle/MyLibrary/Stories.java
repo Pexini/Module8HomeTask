@@ -45,4 +45,5 @@ public class Stories extends Materials {
     public void addMaterials(String materialsTitle) {
         super.addMaterials(materialsTitle);
     }
+
 }

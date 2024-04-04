@@ -48,6 +48,7 @@ public class Main {
         System.out.println("4. Узнать общее количество материалов в библиотеке.");
 
         int userChoice = scanner.nextInt();
+        scanner.nextLine();
         switch (userChoice) {
             case 1:
                 System.out.println("Какой раздел библиотеки вас интересует:");
@@ -268,16 +269,20 @@ public class Main {
                         }
                     }
                 }
-            } case 4:{
-
-                System.out.println("На данный момент в бибилиотеке находится:");
-                System.out.println("Книг: ");
-                System.out.println("Журналов: ");
-                System.out.println("Историй: ");
-                System.out.println("Сказаок: ");
-
-            break;
             }
+            case 4: {
+                int totalMAterials = books.size() + magazines.size() + stories.size() + tales.size();
+                System.out.println("На данный момент в бибилиотеке находится: ");
+                System.out.println("Книг: " + books.size());
+                System.out.println("Журналов: " + magazines.size());
+                System.out.println("Историй: " + stories.size());
+                System.out.println("Сказаок: " + tales.size());
+                System.out.println("Итого : " + totalMAterials);
+                break;
+            }
+            default:
+                System.out.println("Неверный ввод. Пожалуйста, выберите действие от 1 до 4.");
+
         }
     }
 }

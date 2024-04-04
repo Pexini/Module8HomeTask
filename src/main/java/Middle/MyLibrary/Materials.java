@@ -89,12 +89,4 @@ public abstract class Materials {
         }
 
     }
-
-    public int sumMaterials() {
-        int totalMaterials = materialsList.size();
-        System.out.println("Общее количество материалов в библиотеке");
-        return totalMaterials;
-    }
-
-
 }
