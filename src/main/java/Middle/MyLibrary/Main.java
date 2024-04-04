@@ -182,27 +182,41 @@ public class Main {
 
             }
             case 3: {
-                System.out.println("Введите название книги, которую хотите вернуть");
-                scanner.nextLine();
-                String returnedMaterialTitle = scanner.nextLine();
-                boolean materialReturned = false;
-                for (Materials material : books || magazines || stories || tales) {
-                    if (!materialReturned) {
-                        material.addMaterials(returnedMaterialTitle, "Author");
-                        System.out.println("Спасибо, материал  " + returnedMaterialTitle + " Успешно возвращен в библиотеку");
-                        break;
+                System.out.println("Что бы вы хотели вернуть?");
+                System.out.println("1. Книгу.");
+                System.out.println("1. Журнал.");
+                System.out.println("1. Историю.");
+                System.out.println("1. Сказку.");
+                int userChoise4 = scanner.nextInt();
+                switch (userChoise4) {
+                    case 1: {
+                        System.out.println("Введите название книги, которую хотите вернуть");
+                        scanner.nextLine();
+                        String returnedTitleBooks = scanner.nextLine();
+                        System.out.println("Введите автора книги");
+                        String authorBooks = scanner.nextLine();
+                        boolean found = false;
+                        for (Books book : books) {
+                            if (book.getTitle().equalsIgnoreCase(returnedTitleBooks)) {
+                                found = true;
+                            System.out.println("Извините данная книга уже находится в библиотеке.");
+                            break;
+                        }
                     }
-                }
-                if (returnedMaterialTitle == findMaterial) {
-                    System.out.println(" У нас уже есть материалы с таким названием.");
-                    materialReturned = true;
-                    break;
+                        if (!found) {
+                            books.add(new Books(returnedTitleBooks, authorBooks));
+                            System.out.println("Спасибо, книга  " + returnedTitleBooks + " " + authorBooks + " " + "Успешно возвращена в библиотеку");
+
+                            break;
+                        }
+                    }
+                    case 2:{
+                        System.out.println("Введите название журнала, который хотите вернуть");
+                        scanner.nextLine();
+                    }
+
                 }
             }
-
         }
     }
 }
-
-
-
