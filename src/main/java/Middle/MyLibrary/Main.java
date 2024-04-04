@@ -45,7 +45,7 @@ public class Main {
         System.out.println("1. Узнать о списке книг в библиотеке");
         System.out.println("2. Проверить наличие книги в нашей библиотеке");
         System.out.println("3. Вернуть книгу");
-
+        System.out.println("4. Узнать общее количество материалов в библиотеке.");
 
         int userChoice = scanner.nextInt();
         switch (userChoice) {
@@ -152,7 +152,7 @@ public class Main {
                 for (Magazines magazine : magazines) {
                     if (magazine.getTitle().equalsIgnoreCase(titleMaterials)) {
                         found = true;
-                        System.out.println("Желаемая журнал есть в нашей библиотеке");
+                        System.out.println("Желаемый журнал есть в нашей библиотеке");
                         magazines.remove(magazine);
                         break;
                     }
@@ -178,9 +178,10 @@ public class Main {
                     System.out.println("Извините данная книга отсутствует, зайдите позже");
                     break;
                 }
-
+                break;
 
             }
+
             case 3: {
                 System.out.println("Что бы вы хотели вернуть?");
                 System.out.println("1. Книгу.");
@@ -188,6 +189,7 @@ public class Main {
                 System.out.println("3. Историю.");
                 System.out.println("4. Сказку.");
                 int userChoise4 = scanner.nextInt();
+                scanner.nextLine();
                 switch (userChoise4) {
                     case 1: {
                         System.out.println("Введите название книги, которую хотите вернуть");
@@ -266,6 +268,15 @@ public class Main {
                         }
                     }
                 }
+            } case 4:{
+
+                System.out.println("На данный момент в бибилиотеке находится:");
+                System.out.println("Книг: ");
+                System.out.println("Журналов: ");
+                System.out.println("Историй: ");
+                System.out.println("Сказаок: ");
+
+            break;
             }
         }
     }

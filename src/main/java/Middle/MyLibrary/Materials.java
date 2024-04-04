@@ -66,24 +66,33 @@ public abstract class Materials {
             }
         }
         if (materialToRemove != null) {
-            materialsList.remove(materialsTitle);
+            materialsList.remove(materialToRemove);
             System.out.println("Книга " + materialsTitle + " Успешно удалена из библиотеки");
         } else {
             System.out.println("Книга " + materialsTitle + " не найдена в библиотеке");
         }
     }
-public void addMaterials(String materialsTitle){
+
+    public void addMaterials(String materialsTitle) {
         Materials materialsToAdd = null;
-        for (Materials material : materialsList){
-            if (material.getTitle().equalsIgnoreCase(materialsTitle)){
+        for (Materials material : materialsList) {
+            if (material.getTitle().equalsIgnoreCase(materialsTitle)) {
                 materialsToAdd = material;
                 break;
             }
-        }if (materialsToAdd == null){
+        }
+        if (materialsToAdd == null) {
             materialsList.add(materialsToAdd);
-        System.out.println("Книга успешно добавлена в библиотеку " + materialsTitle);
-    }else {
-        System.out.println("Данная книга уже есть в библиотеке " + materialsTitle );
+            System.out.println("Книга успешно добавлена в библиотеку " + materialsTitle);
+        } else {
+            System.out.println("Данная книга уже есть в библиотеке " + materialsTitle);
+        }
+
     }
-}
+
+    public int sumMaterials{
+
+    }
+
+
 }
