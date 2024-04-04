@@ -67,7 +67,7 @@ public abstract class Materials {
         }
         if (materialToRemove != null) {
             materialsList.remove(materialsTitle);
-            System.out.println("Книга " + materialsTitle + "Успешно удалена из библиотеки");
+            System.out.println("Книга " + materialsTitle + " Успешно удалена из библиотеки");
         } else {
             System.out.println("Книга " + materialsTitle + " не найдена в библиотеке");
         }

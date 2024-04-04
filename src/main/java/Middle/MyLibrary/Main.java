@@ -199,54 +199,72 @@ public class Main {
                         for (Books book : books) {
                             if (book.getTitle().equalsIgnoreCase(returnedTitleBooks)) {
                                 found = true;
-                            System.out.println("Извините данная книга уже находится в библиотеке.");
-                            break;
+                                System.out.println("Извините данная книга уже находится в библиотеке.");
+                                break;
+                            }
                         }
-                    }
                         if (!found) {
                             books.add(new Books(returnedTitleBooks, authorBooks));
                             System.out.println("Спасибо, книга  " + returnedTitleBooks + " " + authorBooks + " " + " Успешно возвращена в библиотеку");
                             break;
                         }
                     }
-                    case 2:{
+                    case 2: {
                         System.out.println("Введите название журнала, который хотите вернуть");
                         scanner.nextLine();
                         String returnedTitleMagazine = scanner.nextLine();
                         boolean found = false;
-                        for (Magazines magazine : magazines){
-                            if (magazine.getTitle().equalsIgnoreCase(returnedTitleMagazine)){
+                        for (Magazines magazine : magazines) {
+                            if (magazine.getTitle().equalsIgnoreCase(returnedTitleMagazine)) {
                                 found = true;
                                 System.out.println("Извините данный журнал уже находится в библиотеке.");
                                 break;
                             }
                         }
-                        if (!found){
+                        if (!found) {
                             magazines.add(new Magazines(returnedTitleMagazine));
-                            System.out.println("Спасибо, журнал  " + returnedTitleMagazine  + " Успешно возвращена в библиотеку");
+                            System.out.println("Спасибо, журнал  " + returnedTitleMagazine + " Успешно возвращена в библиотеку");
                             break;
                         }
                     }
-                    case 3:{
+                    case 3: {
                         System.out.println("Введите название истории, которую хотите вернуть");
                         scanner.nextLine();
                         String returnedTitleStories = scanner.nextLine();
                         System.out.println("Введите автора истории");
                         String authorStories = scanner.nextLine();
                         boolean found = false;
-                        for (Stories storie : stories){
-                            if (storie.getTitle().equalsIgnoreCase(returnedTitleStories)){
+                        for (Stories storie : stories) {
+                            if (storie.getTitle().equalsIgnoreCase(returnedTitleStories)) {
                                 found = true;
                                 System.out.println("Извините данная история уже находится в библиотеке.");
                             }
                         }
-                        if (!found){
+                        if (!found) {
                             stories.add(new Stories(returnedTitleStories, authorStories));
-                            System.out.println("Спасибо, журнал  " + returnedTitleStories + " " + authorStories  + " Успешно возвращена в библиотеку");
-                            break
+                            System.out.println("Спасибо, журнал  " + returnedTitleStories + " " + authorStories + " Успешно возвращена в библиотеку");
+                            break;
                         }
                     }
-
+                    case 4: {
+                        System.out.println("Введите название сказки, которую хотите вернуть");
+                        scanner.nextLine();
+                        String returnedTitleTiles = scanner.nextLine();
+                        System.out.println("Введите автора истории");
+                        String authorTiles = scanner.nextLine();
+                        boolean found = false;
+                        for (Tales tale : tales) {
+                            if (tale.getTitle().equalsIgnoreCase(returnedTitleTiles)) {
+                                found = true;
+                                System.out.println("Извините данная сказка уже находится в библиотеке.");
+                            }
+                        }
+                        if (!found) {
+                            stories.add(new Stories(returnedTitleTiles, authorTiles));
+                            System.out.println("Спасибо, сказка  " + returnedTitleTiles + " " + authorTiles + " Успешно возвращена в библиотеку");
+                            break;
+                        }
+                    }
                 }
             }
         }
