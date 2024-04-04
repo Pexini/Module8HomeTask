@@ -84,7 +84,7 @@ public class Main {
                 System.out.println("Желаете взять что нибудь почитать?");
                 System.out.println("1. Да");
                 System.out.println("2. Нет");
-
+                scanner.nextLine();
                 int userChoice3 = scanner.nextInt();
                 switch (userChoice3) {
                     case 1: {
@@ -140,7 +140,6 @@ public class Main {
                 break;
             case 2: {
                 System.out.println(" Введите название материала который ищите:");
-                scanner.nextLine();
                 String titleMaterials = scanner.nextLine();
                 boolean found = false;
                 for (Books book : books) {
@@ -190,7 +189,6 @@ public class Main {
                 System.out.println("3. Историю.");
                 System.out.println("4. Сказку.");
                 int userChoise4 = scanner.nextInt();
-                scanner.nextLine();
                 switch (userChoise4) {
                     case 1: {
                         System.out.println("Введите название книги, которую хотите вернуть");
@@ -211,6 +209,7 @@ public class Main {
                             System.out.println("Спасибо, книга  " + returnedTitleBooks + " " + authorBooks + " " + " Успешно возвращена в библиотеку");
                             break;
                         }
+                        break;
                     }
                     case 2: {
                         System.out.println("Введите название журнала, который хотите вернуть");
@@ -229,6 +228,7 @@ public class Main {
                             System.out.println("Спасибо, журнал  " + returnedTitleMagazine + " Успешно возвращена в библиотеку");
                             break;
                         }
+                        break;
                     }
                     case 3: {
                         System.out.println("Введите название истории, которую хотите вернуть");
@@ -241,6 +241,7 @@ public class Main {
                             if (storie.getTitle().equalsIgnoreCase(returnedTitleStories)) {
                                 found = true;
                                 System.out.println("Извините данная история уже находится в библиотеке.");
+                                break;
                             }
                         }
                         if (!found) {
@@ -248,6 +249,7 @@ public class Main {
                             System.out.println("Спасибо, журнал  " + returnedTitleStories + " " + authorStories + " Успешно возвращена в библиотеку");
                             break;
                         }
+                        break;
                     }
                     case 4: {
                         System.out.println("Введите название сказки, которую хотите вернуть");
@@ -260,15 +262,20 @@ public class Main {
                             if (tale.getTitle().equalsIgnoreCase(returnedTitleTiles)) {
                                 found = true;
                                 System.out.println("Извините данная сказка уже находится в библиотеке.");
+                                break;
                             }
+
                         }
                         if (!found) {
                             stories.add(new Stories(returnedTitleTiles, authorTiles));
                             System.out.println("Спасибо, сказка  " + returnedTitleTiles + " " + authorTiles + " Успешно возвращена в библиотеку");
                             break;
                         }
+                        break;
                     }
+
                 }
+                break;
             }
             case 4: {
                 int totalMAterials = books.size() + magazines.size() + stories.size() + tales.size();
