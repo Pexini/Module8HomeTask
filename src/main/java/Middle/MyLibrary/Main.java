@@ -184,9 +184,9 @@ public class Main {
             case 3: {
                 System.out.println("Что бы вы хотели вернуть?");
                 System.out.println("1. Книгу.");
-                System.out.println("1. Журнал.");
-                System.out.println("1. Историю.");
-                System.out.println("1. Сказку.");
+                System.out.println("2. Журнал.");
+                System.out.println("3. Историю.");
+                System.out.println("4. Сказку.");
                 int userChoise4 = scanner.nextInt();
                 switch (userChoise4) {
                     case 1: {
@@ -205,14 +205,46 @@ public class Main {
                     }
                         if (!found) {
                             books.add(new Books(returnedTitleBooks, authorBooks));
-                            System.out.println("Спасибо, книга  " + returnedTitleBooks + " " + authorBooks + " " + "Успешно возвращена в библиотеку");
-
+                            System.out.println("Спасибо, книга  " + returnedTitleBooks + " " + authorBooks + " " + " Успешно возвращена в библиотеку");
                             break;
                         }
                     }
                     case 2:{
                         System.out.println("Введите название журнала, который хотите вернуть");
                         scanner.nextLine();
+                        String returnedTitleMagazine = scanner.nextLine();
+                        boolean found = false;
+                        for (Magazines magazine : magazines){
+                            if (magazine.getTitle().equalsIgnoreCase(returnedTitleMagazine)){
+                                found = true;
+                                System.out.println("Извините данный журнал уже находится в библиотеке.");
+                                break;
+                            }
+                        }
+                        if (!found){
+                            magazines.add(new Magazines(returnedTitleMagazine));
+                            System.out.println("Спасибо, журнал  " + returnedTitleMagazine  + " Успешно возвращена в библиотеку");
+                            break;
+                        }
+                    }
+                    case 3:{
+                        System.out.println("Введите название истории, которую хотите вернуть");
+                        scanner.nextLine();
+                        String returnedTitleStories = scanner.nextLine();
+                        System.out.println("Введите автора истории");
+                        String authorStories = scanner.nextLine();
+                        boolean found = false;
+                        for (Stories storie : stories){
+                            if (storie.getTitle().equalsIgnoreCase(returnedTitleStories)){
+                                found = true;
+                                System.out.println("Извините данная история уже находится в библиотеке.");
+                            }
+                        }
+                        if (!found){
+                            stories.add(new Stories(returnedTitleStories, authorStories));
+                            System.out.println("Спасибо, журнал  " + returnedTitleStories + " " + authorStories  + " Успешно возвращена в библиотеку");
+                            break
+                        }
                     }
 
                 }
