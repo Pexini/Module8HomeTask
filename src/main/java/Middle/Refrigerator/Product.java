@@ -1,6 +1,6 @@
 package Middle.Refrigerator;
 
-class Product {
+abstract class Product {
     private String name;
 
     private  int volume;
