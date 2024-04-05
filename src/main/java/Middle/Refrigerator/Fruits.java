@@ -21,4 +21,5 @@ public class Fruits extends Product{
     void describe() {
         System.out.println("Фрукты " + getName() + "\", объем " + getVolume());
     }
+
 }

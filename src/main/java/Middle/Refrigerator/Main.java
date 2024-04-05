@@ -10,9 +10,15 @@ public class Main {
         fridge.addProduct(new Meat("Мясо", 25));
         fridge.addProduct(new Fruits("Фрукты", 20));
 
-    fridge.listOfProduct();
-   int getTotalVolume = fridge.totalValume();
+        fridge.listOfProduct();
+        int getTotalVolume = fridge.getTotalVolume();
+        System.out.println("Холодильник заполнен на " + getTotalVolume);
 
+        Cheese cheeseToRemove = new Cheese("Сыр", 15);
+        fridge.removeProduct(cheeseToRemove);
 
+        fridge.listOfProduct();
+        int getTotalVolume1 = fridge.getTotalVolume();
+        System.out.println("Холодильник заполнен на " + getTotalVolume1);
     }
 }
