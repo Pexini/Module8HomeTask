@@ -28,28 +28,31 @@ public class Fridge {
     }
 
     public void removeProduct(Product productToRemove) {
-        boolean found = false;
-        for (Product product : products) {
-            if (product.getName().equalsIgnoreCase(productToRemove.getName())) {
-                found = true;
-                products.remove(product);
-                System.out.println("Продукт удален из холодильника " + product.getName());
-                break;
-            }
-        }
-        if (!found) {
+        boolean removed = products.remove(productToRemove);
+        if (removed) {
+            cirrentVolume -= productToRemove.getVolume();
+            System.out.println("Продукт удален из холодильника " + productToRemove.getName());
+        } else {
             System.out.println("Данного продукта нет в холодильнике");
         }
     }
-public void listOfProduct(){
-        if (products.isEmpty()){
+
+    public void listOfProduct() {
+        if (products.isEmpty()) {
             System.out.println("Холодильник пуст");
-        }else {
+        } else {
             System.out.println("Содержимое холодильника");
-        for (Product product: products){
-            product.describe();
+            for (Product product : products) {
+                product.describe();
+            }
         }
+    }
+    public int getTotalVolume(){
+        int totalValume = 0;
+        for (Product product : products){
+            totalValume += product.getVolume();
         }
-}
+        return totalValume;
+    }
 
 }
