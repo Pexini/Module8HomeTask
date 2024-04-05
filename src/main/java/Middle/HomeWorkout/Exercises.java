@@ -1,4 +1,7 @@
 package Middle.HomeWorkout;
 
-public abstract class  Exercises {
+
+abstract class Exercises {
+    abstract double calculateCaloriesPerMinute();
 }
+
