@@ -1,4 +1,4 @@
 package Middle.HomeWorkout;
 
-public class PushUps {
+public class PushUps extends Exercises{
 }

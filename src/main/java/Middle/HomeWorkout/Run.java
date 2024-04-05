@@ -1,4 +1,4 @@
 package Middle.HomeWorkout;
 
-public class Run {
+public class Run extends Exercises{
 }
