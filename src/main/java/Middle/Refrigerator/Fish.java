@@ -19,7 +19,7 @@ public class Fish extends Product{
 
     @Override
     void describe() {
-        System.out.println("Рыба " + getName() + "\", объем " + getVolume());
+        System.out.println(getName() + "\", объем " + getVolume());
     }
 
 

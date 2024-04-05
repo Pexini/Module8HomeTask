@@ -19,7 +19,7 @@ public class Cheese extends Product{
 
     @Override
     void describe() {
-        System.out.println("Сыр " + getName() + "\", объем " + getVolume());
+        System.out.println(getName() + "\", объем " + getVolume());
     }
 
 

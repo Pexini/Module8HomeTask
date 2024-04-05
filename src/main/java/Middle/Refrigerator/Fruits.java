@@ -19,7 +19,7 @@ public class Fruits extends Product {
 
     @Override
     void describe() {
-        System.out.println("Фрукты " + getName() + "\", объем " + getVolume());
+        System.out.println(getName() + "\", объем " + getVolume());
     }
 
 

@@ -23,7 +23,7 @@ public class Bread extends Product {
 
     @Override
     void describe() {
-        System.out.println("Хлеб " + getName() + "\", объем " + getVolume());
+        System.out.println(getName() + "\", объем " + getVolume());
     }
 
     @Override
