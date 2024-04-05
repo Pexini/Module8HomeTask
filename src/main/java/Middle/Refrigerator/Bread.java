@@ -35,9 +35,5 @@ public class Bread extends Product {
         return new Bread(getName() + " (часть)", volume);
     }
 
-    @Override
-    protected Product createProduct(String name, int volume) {
-        return null;
-    }
 }
 

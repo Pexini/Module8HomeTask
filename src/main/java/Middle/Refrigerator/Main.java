@@ -14,8 +14,8 @@ public class Main {
 
 
 
-        int getTotalVolume1 = fridge.getTotalVolume();
-                System.out.println("Холодильник заполнен на " + getTotalVolume1);
+        int getTotalVolume = fridge.getTotalVolume();
+                System.out.println("Холодильник заполнен на " + getTotalVolume);
 
     }
 }

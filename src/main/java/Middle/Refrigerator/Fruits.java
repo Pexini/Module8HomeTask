@@ -1,6 +1,6 @@
 package Middle.Refrigerator;
 
-public class Fruits extends Product{
+public class Fruits extends Product {
     public Fruits(String name, int volume) {
         super(name, volume);
     }
@@ -22,10 +22,6 @@ public class Fruits extends Product{
         System.out.println("Фрукты " + getName() + "\", объем " + getVolume());
     }
 
-    @Override
-    protected Product createProduct(String name, int volume) {
-        return null;
-    }
 
     @Override
     public void setVolume(int volume) {
@@ -34,6 +30,11 @@ public class Fruits extends Product{
 
     @Override
     public Product split(int volume) {
-        return null;
+
+        if (volume <= 0 || volume >= getVolume()) {
+            return null;
+        }
+        setVolume(getVolume() - volume);
+        return new Bread(getName() + " (часть)", volume);
     }
 }

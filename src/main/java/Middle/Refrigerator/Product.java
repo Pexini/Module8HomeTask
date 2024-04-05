@@ -5,8 +5,6 @@ abstract class Product {
 
     private int volume;
 
-    protected abstract Product createProduct(String name, int volume);
-
     public Product(String name, int volume) {
         this.name = name;
         this.volume = volume;

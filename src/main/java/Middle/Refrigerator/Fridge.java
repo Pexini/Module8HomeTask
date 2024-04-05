@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Fridge {
     private int maxVolume;
-    private int cirrentVolume;
+    private int currentVolume;
 
     private List<Product> products;
 
@@ -13,23 +13,23 @@ public class Fridge {
     public Fridge(int maxVolume) {
 
         this.maxVolume = maxVolume;
-        this.cirrentVolume = 0;
+        this.currentVolume = 0;
         this.products = new ArrayList<>();
     }
 
 
     public void addProduct(Product product) {
-        int availableSpace = maxVolume - cirrentVolume;
+        int availableSpace = maxVolume - currentVolume;
 
-        if (cirrentVolume + product.getVolume() <= maxVolume) {
+        if (currentVolume + product.getVolume() <= maxVolume) {
             products.add(product);
-            cirrentVolume += product.getVolume();
+            currentVolume += product.getVolume();
 
         } else if (availableSpace > 0) {
             int addedVolume = availableSpace;
-            Product partialProduct = product.split(addedVolume);
+           Product partialProduct = product.split(addedVolume);
             products.add(partialProduct);
-            cirrentVolume += addedVolume;
+            currentVolume += addedVolume;
             System.out.println("Только часть продукта " + product.getName() + " " + product.getVolume() + " " + " добавленна в холодильник");
         } else {
             System.out.println("Объем холодильника переполнен " + product.getName() + " " + product.getVolume() + " не поместились в холодильник");

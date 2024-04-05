@@ -22,10 +22,7 @@ public class Cheese extends Product{
         System.out.println("Сыр " + getName() + "\", объем " + getVolume());
     }
 
-    @Override
-    protected Product createProduct(String name, int volume) {
-        return null;
-    }
+
 
     @Override
     public void setVolume(int volume) {
@@ -34,6 +31,10 @@ public class Cheese extends Product{
 
     @Override
     public Product split(int volume) {
-        return null;
+        if (volume <= 0 || volume >= getVolume()) {
+            return null;
+        }
+        setVolume(getVolume() - volume);
+        return new Bread(getName() + " (часть)", volume);
     }
 }
