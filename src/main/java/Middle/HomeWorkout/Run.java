@@ -1,8 +1,18 @@
 package Middle.HomeWorkout;
 
-public class Run extends Exercises{
+public class Run extends Exercises {
+    private double weight;
+    private double speed;
+
+    public Run(double weight, double speed) {
+        this.weight = weight;
+        this.speed = speed;
+    }
+
     @Override
     double calculateCaloriesPerMinute() {
-        return 0;
+        double intensiveFactor = 0.0175;
+        double caloriesPerMinute = weight * intensiveFactor * speed;
+        return caloriesPerMinute;
     }
 }
