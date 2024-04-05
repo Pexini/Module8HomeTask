@@ -27,15 +27,6 @@ public class Fridge {
         }
     }
 
-    public void removeProduct(Product productToRemove) {
-        boolean removed = products.remove(productToRemove);
-        if (removed) {
-            cirrentVolume -= productToRemove.getVolume();
-            System.out.println("Продукт удален из холодильника " + productToRemove.getName());
-        } else {
-            System.out.println("Данного продукта нет в холодильнике");
-        }
-    }
 
     public void listOfProduct() {
         if (products.isEmpty()) {

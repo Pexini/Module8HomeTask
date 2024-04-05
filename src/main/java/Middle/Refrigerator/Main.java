@@ -14,8 +14,6 @@ public class Main {
         int getTotalVolume = fridge.getTotalVolume();
         System.out.println("Холодильник заполнен на " + getTotalVolume);
 
-        Cheese cheeseToRemove = new Cheese("Сыр", 15);
-        fridge.removeProduct(cheeseToRemove);
 
         fridge.listOfProduct();
         int getTotalVolume1 = fridge.getTotalVolume();
