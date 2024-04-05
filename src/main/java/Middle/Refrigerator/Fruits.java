@@ -22,4 +22,18 @@ public class Fruits extends Product{
         System.out.println("Фрукты " + getName() + "\", объем " + getVolume());
     }
 
+    @Override
+    protected Product createProduct(String name, int volume) {
+        return null;
+    }
+
+    @Override
+    public void setVolume(int volume) {
+        super.setVolume(volume);
+    }
+
+    @Override
+    public Product split(int volume) {
+        return null;
+    }
 }

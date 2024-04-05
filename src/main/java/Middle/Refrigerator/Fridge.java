@@ -17,13 +17,23 @@ public class Fridge {
         this.products = new ArrayList<>();
     }
 
+
     public void addProduct(Product product) {
+        int availableSpace = maxVolume - cirrentVolume;
+
         if (cirrentVolume + product.getVolume() <= maxVolume) {
             products.add(product);
             cirrentVolume += product.getVolume();
-            System.out.println("Продукт " + product.getName() + " " + "добавлен в холодильник");
+
+        } else if (availableSpace > 0) {
+            int addedVolume = availableSpace;
+            Product partialProduct = product.split(addedVolume);
+            products.add(partialProduct);
+            cirrentVolume += addedVolume;
+            System.out.println("Только часть продукта " + product.getName() + " " + product.getVolume() + " " + " добавленна в холодильник");
         } else {
-            System.out.println("Объем холодильника не может вместить больше продуктов");
+            System.out.println("Объем холодильника переполнен " + product.getName() + " " + product.getVolume() + " не поместились в холодильник");
+
         }
     }
 
@@ -38,9 +48,10 @@ public class Fridge {
             }
         }
     }
-    public int getTotalVolume(){
+
+    public int getTotalVolume() {
         int totalValume = 0;
-        for (Product product : products){
+        for (Product product : products) {
             totalValume += product.getVolume();
         }
         return totalValume;
