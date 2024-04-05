@@ -11,6 +11,10 @@ public class Main {
 
         Run run = new Run(85, 1.75);
         double caloriesBurnedRunning = calculator.caloriesBurnedRunning(run, 30);
-        System.out.println("Калории сожженые бегом " + caloriesBurnedRunning);
+        System.out.println("Калории сожженные бегом " + caloriesBurnedRunning);
+
+        Jump jump = new Jump(85, 100);
+
+
     }
 }
