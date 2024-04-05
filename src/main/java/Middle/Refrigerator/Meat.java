@@ -19,7 +19,7 @@ public class Meat extends Product{
 
     @Override
     void describe() {
-        System.out.println(getName() + "\", объем " + getVolume());
+        System.out.println(getName() + " объем " + getVolume());
     }
 
 

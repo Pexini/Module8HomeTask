@@ -8,7 +8,7 @@ public class Main {
         fridge.addProduct(new Bread("Хлеб", 20));
         fridge.addProduct(new Cheese("Сыр", 30));
         fridge.addProduct(new Meat("Мясо", 20));
-        fridge.addProduct(new Fruits("Фрукты", 20));
+        fridge.addProduct(new Fruits("Фрукты", 40));
         fridge.listOfProduct();
 
 

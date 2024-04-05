@@ -30,7 +30,7 @@ public class Fridge {
            Product partialProduct = product.split(addedVolume);
             products.add(partialProduct);
             currentVolume += addedVolume;
-            System.out.println("Только часть продукта " + product.getName() + " добавлено в холодильник " + " " + product.getVolume() + " - не поместилось в холодильник");
+            System.out.println("Только часть продукта " + product.getName() + " " + product.getVolume() + " - не поместилось в холодильник");
         } else {
             System.out.println("Объем холодильника переполнен ");
             System.out.println(product.getName() + " " + product.getVolume() + " не поместились в холодильник");

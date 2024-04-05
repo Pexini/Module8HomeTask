@@ -19,7 +19,7 @@ public class Fruits extends Product {
 
     @Override
     void describe() {
-        System.out.println(getName() + "\", объем " + getVolume());
+        System.out.println(getName() + " объем " + getVolume());
     }
 
 
@@ -35,6 +35,6 @@ public class Fruits extends Product {
             return null;
         }
         setVolume(getVolume() - volume);
-        return new Fruits(getName() + " поместилось  в ", volume);
+        return new Fruits(getName() + "  поместилось  в ", volume);
     }
 }
