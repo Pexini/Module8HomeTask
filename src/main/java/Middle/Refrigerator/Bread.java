@@ -32,7 +32,7 @@ public class Bread extends Product {
             return null;
         }
         setVolume(getVolume() - volume);
-        return new Bread(getName() + " (часть)", volume);
+        return new Bread(getName() + " поместилось  в ", volume);
     }
 
 }

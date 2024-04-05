@@ -34,6 +34,6 @@ public class Fish extends Product{
             return null;
         }
         setVolume(getVolume() - volume);
-        return new Bread(getName() + " (часть)", volume);
+        return new Fish(getName() + " поместилось  в ", volume);
     }
 }

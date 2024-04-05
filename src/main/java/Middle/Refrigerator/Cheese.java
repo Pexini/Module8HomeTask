@@ -35,6 +35,6 @@ public class Cheese extends Product{
             return null;
         }
         setVolume(getVolume() - volume);
-        return new Bread(getName() + " (часть)", volume);
+        return new Cheese(getName() + " поместилось  в ", volume);
     }
 }

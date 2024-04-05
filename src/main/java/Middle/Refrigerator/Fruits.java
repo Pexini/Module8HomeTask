@@ -35,6 +35,6 @@ public class Fruits extends Product {
             return null;
         }
         setVolume(getVolume() - volume);
-        return new Bread(getName() + " (часть)", volume);
+        return new Fruits(getName() + " поместилось  в ", volume);
     }
 }
