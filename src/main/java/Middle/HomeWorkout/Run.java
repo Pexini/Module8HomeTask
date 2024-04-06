@@ -11,7 +11,7 @@ public class Run extends Exercises {
 
     @Override
     double calculateCaloriesPerMinute() {
-        double intensiveFactor = 0.175;
+        double intensiveFactor = 0.05;
         double caloriesPerMinute = weight * intensiveFactor * speed;
         return caloriesPerMinute;
     }
