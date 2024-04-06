@@ -11,7 +11,7 @@ public class Jump extends Exercises {
 
     @Override
     double calculateCaloriesPerMinute() {
-        double intensiveFactor = 0.10;
+        double intensiveFactor = 0.115;
         double caloriesPerMinute = weight * intensiveFactor * times;
         return caloriesPerMinute;
     }
