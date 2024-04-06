@@ -2,16 +2,16 @@ package Middle.HomeWorkout;
 
 public class PushUps extends Exercises{
     private double weight;
-    private double speed;
-    public PushUps(double weight, double speed) {
+    private double times;
+    public PushUps(double weight, double times) {
         this.weight = weight;
-        this.speed = speed;
+        this.times = times;
     }
 
     @Override
     double calculateCaloriesPerMinute() {
-        double intensiveFactor = 0.357;
-        double caloriesPerMinute = weight * intensiveFactor * speed;
+        double intensiveFactor = 0.524;
+        double caloriesPerMinute = weight * intensiveFactor * times;
         return caloriesPerMinute;
     }
 }
