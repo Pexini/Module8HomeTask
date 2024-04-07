@@ -10,7 +10,7 @@ public class PushUps extends Exercises{
 
     @Override
     double calculateCaloriesPerMinute() {
-        double intensiveFactor = 0.250;
+        double intensiveFactor = 0.0325;
         double caloriesPerMinute = weight * intensiveFactor * times;
         return caloriesPerMinute;
     }

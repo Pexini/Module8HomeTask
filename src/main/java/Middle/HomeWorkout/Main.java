@@ -17,9 +17,9 @@ public class Main {
         double caloriesBurnedJump = calculator.caloriesBurned(jump, 15);
         System.out.println("Калории сожженные прыжками " + caloriesBurnedJump);
 
-        PushUps pushUps = new PushUps(85, 100);
+        PushUps pushUps = new PushUps(85, 50);
         double caloriesBurnedPushUps = calculator.caloriesBurned(pushUps, 10);
-        System.out.println("Калории сожженные отжиманиями " + caloriesBurnedJump);
+        System.out.println("Калории сожженные при отжимании " + caloriesBurnedPushUps);
 
     }
 }
