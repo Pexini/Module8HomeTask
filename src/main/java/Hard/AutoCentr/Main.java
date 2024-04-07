@@ -28,7 +28,8 @@ public class Main {
         dealership.addCar(new Bus("Iveco 315", 10_150_000));
 
 
-        dealership.sellCar(new Truck("Freightliner Century", 3_700_000));
+        dealership.sellCar(new Bus("Iveco 315", 10_150_000));
+        dealership.sellCar(new Sedan("Volvo S90", 1_300_000));
 
         dealership.showAllCars();
         dealership.showCheapestCar();

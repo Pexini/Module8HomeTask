@@ -1,5 +1,6 @@
 package Hard.AutoCentr;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -12,10 +13,16 @@ public class Dealership {
     }
 
     public void sellCar(Cars car) {
-        if (cars.contains(car)) {
-            cars.remove(car);
-            System.out.println("Автомобиль продан: " + car.getBrand() + " " + car.getPrice());
-        } else {
+        boolean carFound = false;
+        for (Cars storedCar : cars) {
+            if (storedCar.equals(car)) {
+                cars.remove(storedCar);
+                System.out.println("Автомобиль продан: " + storedCar.getBrand() + ", за - " + new DecimalFormat("#,###,###,##0.00").format(storedCar.getPrice()));
+                carFound = true;
+                break;
+            }
+        }
+        if (!carFound) {
             System.out.println("Такого автомобиля нет в наличии");
         }
     }
@@ -29,13 +36,14 @@ public class Dealership {
 
     public void showMostExpensiveCar() {
         Cars mostExpensive = cars.stream().max(Comparator.comparing(Cars::getPrice)).orElse(null);
-            if (mostExpensive != null){
-                System.out.println("Самый дорогой автомобиль : " + mostExpensive.getBrand() + " " + mostExpensive.getPrice() + " " + mostExpensive.getType());
-            }
+        if (mostExpensive != null) {
+            System.out.println("Самый дорогой автомобиль : " + mostExpensive.getBrand() + " " + mostExpensive.getPrice() + " " + mostExpensive.getType());
         }
-        public void showCheapestCar(){
+    }
+
+    public void showCheapestCar() {
         Cars cheaperCar = cars.stream().min(Comparator.comparing(Cars::getPrice)).orElse(null);
-        if ((cheaperCar != null)){
+        if ((cheaperCar != null)) {
             System.out.println("Самый дешевый автомобиль: " + cheaperCar.getBrand() + " " + cheaperCar.getPrice() + " " + cheaperCar.getType());
         }
     }

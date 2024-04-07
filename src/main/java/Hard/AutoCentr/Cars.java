@@ -1,11 +1,13 @@
 package Hard.AutoCentr;
 
-abstract class Cars {
+import java.util.Objects;
 
-    private String Brand;
-    private int price;
+public abstract class Cars {
 
-    public Cars(String brand, int price) {
+    protected String Brand;
+    protected double price;
+
+    public Cars(String brand, double price) {
         Brand = brand;
         this.price = price;
     }
@@ -14,9 +16,11 @@ abstract class Cars {
         return Brand;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
     abstract String getType();
+
+    abstract public boolean equals(Object o);
 
   }
