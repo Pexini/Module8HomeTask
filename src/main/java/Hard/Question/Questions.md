@@ -23,6 +23,6 @@ error: types B and C are incompatible;<br>
 public interface A extends B, C{
 <br> 
 
-interface A inherits unrelated defaults for print() from types B and C
+interface A inherits unrelated defaults for print() from types B and C <br>
 Когда класс AImpl наследует интерфейс A, который в свою очередь наследует интерфейсы B и C, происходит наследование конфликтующих методов print() из интерфейсов B и C. Это приводит к ошибке компиляции, так как компилятор не может определить, какую реализацию метода использовать.<br>
 
