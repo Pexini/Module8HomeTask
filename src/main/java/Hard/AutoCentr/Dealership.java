@@ -30,21 +30,21 @@ public class Dealership {
     public void showAllCars() {
         System.out.println("Список всех автомобилей:");
         for (Cars car : cars) {
-            System.out.println(car.getBrand() + car.getType() + ", Цена: " + car.getPrice());
+            System.out.println(car.getBrand() + " " + car.getType() + ", Цена: " + new DecimalFormat("#,###,###,##0.00").format(car.getPrice()));
         }
     }
 
     public void showMostExpensiveCar() {
         Cars mostExpensive = cars.stream().max(Comparator.comparing(Cars::getPrice)).orElse(null);
         if (mostExpensive != null) {
-            System.out.println("Самый дорогой автомобиль : " + mostExpensive.getBrand() + " " + mostExpensive.getPrice() + " " + mostExpensive.getType());
+            System.out.println("Самый дорогой автомобиль : " + mostExpensive.getBrand() + " " + new DecimalFormat("#,###,###,##0.00").format(mostExpensive.getPrice()) + " " + mostExpensive.getType());
         }
     }
 
     public void showCheapestCar() {
         Cars cheaperCar = cars.stream().min(Comparator.comparing(Cars::getPrice)).orElse(null);
         if ((cheaperCar != null)) {
-            System.out.println("Самый дешевый автомобиль: " + cheaperCar.getBrand() + " " + cheaperCar.getPrice() + " " + cheaperCar.getType());
+            System.out.println("Самый дешевый автомобиль: " + cheaperCar.getBrand() + " " + new DecimalFormat("#,###,###,##0.00").format(cheaperCar.getPrice()) + " " + cheaperCar.getType());
         }
     }
 }
